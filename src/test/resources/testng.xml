@@ -5,5 +5,10 @@
             <class name="com.greetz.ft.d2m.home.HomePageTest"/>
         </classes>
     </test>
+    <test name="Ucom">
+        <classes>
+            <class name="com.greetz.ft.d2m.Ucome.UcomBiznesTVTest"/>
+        </classes>
+    </test>
 </suite>
 

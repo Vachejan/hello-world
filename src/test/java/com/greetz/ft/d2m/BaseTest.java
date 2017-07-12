@@ -2,6 +2,7 @@ package com.greetz.ft.d2m;
 
 import com.greetz.ft.d2m.factory.WebDriverFactory;
 import com.greetz.ft.d2m.pages.PageBuilder;
+import com.greetz.ft.d2m.pages.Ucome.UcomBiznesTV;
 import com.greetz.ft.d2m.pages.home.HomePage;
 import com.greetz.ft.d2m.utils.SauceLabsListener;
 import com.saucelabs.common.SauceOnDemandAuthentication;
@@ -23,6 +24,7 @@ public abstract class BaseTest implements SauceOnDemandSessionIdProvider, SauceO
      * all the pages
      */
     protected HomePage homePage;
+    protected UcomBiznesTV ucomBiznesTV;
     private   ThreadLocal<WebDriver> driver;
 
 
@@ -60,6 +62,7 @@ public abstract class BaseTest implements SauceOnDemandSessionIdProvider, SauceO
         driver = new ThreadLocal<>();
         driver.set(WebDriverFactory.createWebDriver());
         homePage = PageBuilder.page(HomePage.class, webDriver()).build();
+        ucomBiznesTV = PageBuilder.page(UcomBiznesTV.class, webDriver()).build();
     }
 
     @AfterTest(alwaysRun = true)

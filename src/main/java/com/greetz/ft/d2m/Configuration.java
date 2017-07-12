@@ -10,7 +10,7 @@ public class Configuration {
 
     private static final String DEFAULT_BROWSER = "chrome";
     private static final String DEFAULT_BROWSER_VERSION = "latest";
-    private static final String DEFAULT_SITE_URL = "https://www.w3schools.com/";
+    private static final String DEFAULT_SITE_URL = "https://www.ucom.am/";
 
     private String username;
 
