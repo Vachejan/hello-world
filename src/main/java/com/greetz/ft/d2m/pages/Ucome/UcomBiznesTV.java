@@ -9,6 +9,7 @@ import org.testng.Assert;
  * Created by vache on 7/12/17.
  */
 public class UcomBiznesTV extends Page {
+
     @FindBy(css = "#container > header > div > div > aside.left.fl > nav > ul > li:nth-child(2) > a")
     private WebElement wbBiznes;
 

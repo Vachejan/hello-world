@@ -18,16 +18,22 @@ public class UcomBiznesTVTest extends BaseTest {
 
         //Մտնում է TV բաժինը։
         ucomBiznesTV.clickTV();
+
         //Վեռցնում է արաջին փաթեթի արժեքը։
         ucomBiznesTV.getTVFullChatchUpPrice();
+
         //Համեմատում է։
         ucomBiznesTV.comparePriceFullCatchUp();
+
         //Վերցնում է երկրորդ փաթեթի արժեքը:
         ucomBiznesTV.getTvFullPrice();
+
         //Համեմատում է։
         ucomBiznesTV.comparePriceFull();
+
         //Վերցնում է երորդ փաթեթի արժեքը:
         ucomBiznesTV.getTVSelectPrice();
+
         //Համեմատում է։
         ucomBiznesTV.comparePriceSelect();
 
