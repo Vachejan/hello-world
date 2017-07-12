@@ -50,6 +50,12 @@ public abstract class Page {
 
     }
 
+    public void switchToSecondTab(){
+        ArrayList<String> arrListTabs = new ArrayList<String> (webDriver.getWindowHandles());
+        webDriver.close();
+        webDriver.switchTo().window(arrListTabs.get(1));
+    }
+
     /**
      * @param element elements which Xpath we would like to receive
      * @return Xpath of the current element
