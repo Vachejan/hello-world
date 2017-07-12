@@ -23,13 +23,13 @@ public class UcomBiznesTVTest extends BaseTest {
         //Համեմատում է։
         ucomBiznesTV.comparePriceFullCatchUp();
         //Վերցնում է երկրորդ փաթեթի արժեքը:
-        ucomBiznesTV.uTvFull();
+        ucomBiznesTV.getTvFullPrice();
         //Համեմատում է։
-        ucomBiznesTV.compare1();
+        ucomBiznesTV.comparePriceFull();
         //Վերցնում է երորդ փաթեթի արժեքը:
-        ucomBiznesTV.uTVSelect();
+        ucomBiznesTV.getTVSelectPrice();
         //Համեմատում է։
-        ucomBiznesTV.compare2();
+        ucomBiznesTV.comparePriceSelect();
 
     }
 }

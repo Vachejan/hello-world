@@ -25,8 +25,8 @@ public class UcomBiznesTV extends Page {
     private WebElement wbSelect;
 
     public String strPriceFullChetchUp = "Դ 9.500/ամիս";
-    public String strValue2 = "Դ 8.500/ամիս";
-    public String strValue3 = "Դ 2.500/ամիս";
+    public String strPriceFull = "Դ 8.500/ամիս";
+    public String strPriceSelect = "Դ 2.500/ամիս";
 
     public void open() {
         super.open("", "Անհատներ - Ucom.am");
@@ -53,22 +53,22 @@ public class UcomBiznesTV extends Page {
     }
 
     //Վեռցնում է երկրորդ փաթեթի արժեքը։
-    public String uTvFull() {
+    public String getTvFullPrice() {
         return wbFull.getText();
     }
 
-    //Համեմատում է երկրորդ փաթեթի արժեքը strValue2֊ի հետ։
-    public void compare1() {
-        Assert.assertEquals(uTvFull(), strValue2, "Փաթեթի արժեքը սծալ է");
+    //Համեմատում է երկրորդ փաթեթի արժեքը strPriceFull֊ի հետ։
+    public void comparePriceFull() {
+        Assert.assertEquals(getTvFullPrice(), strPriceFull, "Փաթեթի արժեքը սծալ է");
     }
 
     //Վեռցնում է երորդ փաթեթի արժեքը։
-    public String uTVSelect() {
+    public String getTVSelectPrice() {
         return wbSelect.getText();
     }
 
-    ////Համեմատում է երորդ փաթեթի արժեքը strValue3֊ի հետ։
-    public void compare2() {
-        Assert.assertEquals(uTVSelect(), strValue3, "Փաթեթի արժեքը  սխալ է");
+    ////Համեմատում է երորդ փաթեթի արժեքը strPriceSelect֊ի հետ։
+    public void comparePriceSelect() {
+        Assert.assertEquals(getTVSelectPrice(), strPriceSelect, "Փաթեթի արժեքը  սխալ է");
     }
 }
