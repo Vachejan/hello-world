@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="General pages" parallel="tests" thread-count="1">
+    <test name="Home page test">
+        <classes>
+            <class name="com.greetz.ft.d2m.home.HomePageTest"/>
+        </classes>
+    </test>
+</suite>
+
