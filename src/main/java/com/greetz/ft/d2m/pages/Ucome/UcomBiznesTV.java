@@ -46,35 +46,66 @@ public class UcomBiznesTV extends Page {
     @FindBy(css = "#status-description")
     private WebElement wbErorPrice;
 
+    @FindBy(css = "#container > header > div > div > aside.left.fl > nav > ul > li:nth-child(3) > a")
+    private WebElement wbHelp;
 
+    @FindBy(css = "#products-inner > aside.fl.right > div > div > div > div:nth-child(2) > a:nth-child(4)")
+    private WebElement wbOnlineHelp;
+
+    @FindBy(css = "#chat-box > h3")
+    private WebElement wbPriseHelpTitle;
+
+    @FindBy(id = "login")
+    private WebElement wbLoginName;
+
+    @FindBy(id = "password")
+    private WebElement wbLoginPassword;
+
+    @FindBy(css = "#subject_id")
+    private WebElement wbCharSubjectButton;
+
+    @FindBy(css = "#b-login")
+    private WebElement wbSubmitButton;
+
+
+    //FullChetchUp ֊ իրական արժեքն է։
     public String strPriceFullChetchUp = "Դ 9.500/ամիս";
+
+    //Full֊ի իրական արժեքն է։
     public String strPriceFull = "Դ 8.500/ամիս";
+
+    //Select֊ի իրական արժեքն է։
     public String strPriceSelect = "Դ 2.500/ամիս";
+
+    //Error֊ի իրական արժեքն է։
     public String strErrorPrice = "Մուտքը ձախողվեց, խնդրում ենք կրկին փորձել:";
+
+    //HelpTitle֊ի իրական արժեքն է։
+    public String strHelpTitlePrice = "Բարի գալուստ Ucom առցանց օգնություն:";
 
     public void open() {
         super.open("", "Անհատներ - Ucom.am");
     }
+
 
     //Մտնում է բիզնես բաժինը։
     public void enterBiznesPage() {
         wbBiznes.click();
     }
 
-    //Սեղմում է կոճակը։
+    //Սեղմում է TV կոճակը։
     public void clickTV() {
         wbTV.click();
     }
 
-    //Վեռցնւմ է առաջին փաթեթի արժեքը։
+    //Վերցնւմ է առաջին փաթեթի արժեքը։
     public String getTVFullChatchUpPrice() {
         return wbFullChatchUp.getText();
     }
 
-    //Համեմատում է արաջին փաթեթի արժեքը strPriceFullChetchUp֊ի հետ:
+    //Համեմատում է առաջին փաթեթի արժեքը strPriceFullChetchUp֊ի հետ:
     public void comparePriceFullCatchUp() {
-        Assert.assertEquals(getTVFullChatchUpPrice(), strPriceFullChetchUp, " Փաթեթի արժեքը  սխալ է");
-    }
+        Assert.assertEquals(getTVFullChatchUpPrice(), strPriceFullChetchUp, " Փաթեթի արժեքը  սխալ է");}
 
     //Վեռցնում է երկրորդ փաթեթի արժեքը։
     public String getTvFullPrice() {
@@ -86,42 +117,40 @@ public class UcomBiznesTV extends Page {
         Assert.assertEquals(getTvFullPrice(), strPriceFull, "Փաթեթի արժեքը սծալ է");
     }
 
-    //Վեռցնում է երորդ փաթեթի արժեքը։
+    //Վերցնում է երորդ փաթեթի արժեքը։
     public String getTVSelectPrice() {
         return wbSelect.getText();
     }
 
    //Համեմատում է երորդ փաթեթի արժեքը strPriceSelect֊ի հետ։
     public void comparePriceSelect() {
-        Assert.assertEquals(getTVSelectPrice(), strPriceSelect, "Փաթեթի արժեքը  սխալ է");
-    }
+        Assert.assertEquals(getTVSelectPrice(), strPriceSelect, "Փաթեթի արժեքը  սխալ է");}
 
-    //Սեղմում է ««Մուտք»» կոճակը
+    //Սեղմում է «Մուտք» կոճակը
     public void clickLoginButton() {
         wbLogin.click();
     }
 
-    //Սեղմում է ««Շառժական»» Կոճակը։
+    //Սեղմում է «Շարժական» Կոճակը։
     public void clickMobileButton() {
         wbMobile.click();
     }
 
-    //Լրացնում  է Հերաղոսահամար։
+    //Լրացնում  է Հեռախսահամարը։
     public void addFonNumber(){
-        wbFonNumber.sendKeys("95401319");
-    }
+        wbFonNumber.sendKeys("95401319");}
 
-    //Լրացնում  է գաղտնաբառ։
+    //Լրացնում  է գաղտնաբառը։
     public void addPassword() {
         wbPassword.sendKeys("Valodik");
     }
 
-    //Լրացնում է Captcha֊ի դաշտը
+    //Լրացնում է Captcha֊ի դաշտը։
     public void addCaptch() {
         wbCaptcha.sendKeys("123456");
     }
 
-    //Սեղմում է ««Մուտք»» Կոճակը։
+    //Սեղմում է «Մուտք» Կոճակը։
     public void clickGoButton() {
         wbGo.click();
     }
@@ -133,8 +162,49 @@ public class UcomBiznesTV extends Page {
 
     //Համեմատում է ձախողման արժեքը։
     public void comparePriceError() {
-        Assert.assertEquals(getErrorPrice(),strErrorPrice,"Ձախողման վեռնագիռը սխալ է");
+        Assert.assertEquals(getErrorPrice(),strErrorPrice,"Ձախողման վերնագիռը սխալ է");
     }
+
+    //Սեղմում է «ՕԳՆՈՒԹՅՈՒՆ» կոճակը։
+    public void clickHelpButton() {
+        wbHelp.click();
+    }
+
+    //Սեղմում է «Առցանց Օգնություն» կոճակը։
+    public void clickOnlineHelpButton() {
+        wbOnlineHelp.click();
+    }
+
+    //Վերցնում է «Օգնության» Էջի վերնագիրը։
+    public String getPriceHelpTitle() {
+        return wbPriseHelpTitle.getText();
+    }
+
+    //Համեմատում է getPriceHelpTitle֊ը։
+    public void comparePriceHelpTitle() {
+        Assert.assertEquals(strHelpTitlePrice,getPriceHelpTitle(),"Օգնության վերնագիրը սխալ է");}
+
+    //Լրացնում է «Ծածկանունը»
+    public void addLoginName()  {
+        //Քցում է Iframe֊ի մեջ։
+        switchToIframe(0);
+        wbLoginName.sendKeys("Valodik");
+    }
+
+    //Լրացնում է «Գաղտնաբարը»
+    public void addLoginPassword() {
+        wbLoginPassword.sendKeys("Valodik");
+    }
+
+    //Ընտրում է «Հաշվեկշրի Հարցում»
+    public void clickBalanceInquiryButton() {
+        selectDropDownItemByName(wbCharSubjectButton, "Հաշվեկշռի հարցում");
+    }
+
+    //Սեխմում է «Մուտք»
+    public void clickSubmitButton() {
+        wbSubmitButton.click();
+    }
+
+
 }
-
-
